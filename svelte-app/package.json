@@ -7,6 +7,7 @@
   "version": "0.1.0",
   "dependencies": {},
   "devDependencies": {
+    "classnames": "^2.2.6",
     "clean-webpack-plugin": "^2.0.1",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
