@@ -8,13 +8,13 @@ const prod = mode === 'production';
 
 module.exports = {
     entry: {
-        bundle: ['./source/main.js']
+        bundle: ['./source/index.js']
     },
     resolve: {
         extensions: ['.mjs', '.js', '.svelte']
     },
     output: {
-        path: `${process.cwd()}/public`,
+        path: `${process.cwd()}/build`,
         filename: '[name].js',
         chunkFilename: '[name].[id].js'
     },
