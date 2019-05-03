@@ -5,13 +5,13 @@ const prod = mode === 'production';
 
 module.exports = {
     entry: {
-        bundle: ['./src/main.js']
+        bundle: ['./source/main.js']
     },
     resolve: {
         extensions: ['.mjs', '.js', '.svelte']
     },
     output: {
-        path: __dirname + '/public',
+        path: `${process.cwd()}/public`,
         filename: '[name].js',
         chunkFilename: '[name].[id].js'
     },
