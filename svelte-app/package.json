@@ -2,7 +2,9 @@
   "name": "svelte-app",
   "scripts": {
     "build": "NODE_ENV=production webpack --config webpack.components.js",
-    "start": "webpack-dev-server --content-base public"
+    "build:stats": "NODE_ENV=production webpack --config webpack.components.js --profile --json > bundle-stats.json && webpack-bundle-analyzer bundle-stats.json -p 8888 -r bundle-report.html",
+    "start": "webpack-dev-server --content-base public",
+    "stats": "webpack --profile --json > bundle-stats.json && webpack-bundle-analyzer bundle-stats.json -p 8888 -r bundle-report.html"
   },
   "version": "0.1.0",
   "dependencies": {},
@@ -17,6 +19,7 @@
     "svelte": "^3.0.0",
     "svelte-loader": "2.13.3",
     "webpack": "^4.30.0",
+    "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.3.1"
   }
