@@ -5,7 +5,8 @@ const prod = mode === 'production';
 
 module.exports = {
     entry: {
-        Button: './source/components/Button.svelte',
+        Button: './source/components/Button.js',
+        Test: './source/components/Test.js',
     },
     resolve: {
         extensions: ['.mjs', '.js', '.svelte']
@@ -19,6 +20,14 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.(mjs|js)?$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                },
+            },
+
             {
                 test: /\.svelte$/,
                 exclude: /node_modules/,
