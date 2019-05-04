@@ -1,26 +1,22 @@
 import React from 'react';
+import Button from '../../svelte/Button';
+import SvelteComponent from '../../components/SvelteComponent/SvelteComponent';
 import history from '../../history';
-import Icon from '../../components/Icon/Icon';
 import Container from '../../components/Container/Container';
-import Button from '../../components/Button/Button';
 import MainMenu from '../../components/MainMenu/MainMenu';
 
 const AppView = (props) => {
     return (
         <Container>
             <MainMenu />
-            <p>
-                <Button
-                    type='button'
-                    onClick={() => {
-                        history.push('/third');
-                    }}
-                >
-                    <Icon name='link' />
-                    &nbsp;
-                    Open third page programmatically
-                </Button>
-            </p>
+            <p>&nbsp;</p>
+            <SvelteComponent
+                component={Button}
+                content='Open third page programmatically'
+                onClick={() => {
+                    history.push('/third');
+                }}
+            />
 
             <hr />
 

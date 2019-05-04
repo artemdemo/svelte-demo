@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const path = require('path');
 const {
     IgnorePlugin,
     DefinePlugin,
@@ -58,6 +59,9 @@ module.exports = (options) => {
         },
         resolve: {
             extensions: ['.js', '.jsx'],
+            alias: {
+                '@svelte-app': path.resolve(__dirname, '../../svelte-app/build/components'),
+            },
         },
         module: {
             rules: [

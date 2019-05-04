@@ -15,7 +15,7 @@ module.exports = {
         filename: '[name].js',
         chunkFilename: '[name].[id].js',
         libraryTarget: 'umd',
-        // umdNamedDefine: true,
+        umdNamedDefine: true,
     },
     module: {
         rules: [
