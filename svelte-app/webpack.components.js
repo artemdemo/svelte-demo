@@ -5,7 +5,7 @@ const prod = mode === 'production';
 
 module.exports = {
     entry: {
-        Button: './source/components/Button.js',
+        // Button: './source/components/Button.js',
         Test: './source/components/Test.js',
     },
     resolve: {
@@ -16,7 +16,7 @@ module.exports = {
         filename: '[name].js',
         chunkFilename: '[name].[id].js',
         libraryTarget: 'umd',
-        umdNamedDefine: true,
+        // umdNamedDefine: true,
     },
     module: {
         rules: [
@@ -28,17 +28,17 @@ module.exports = {
                 },
             },
 
-            {
-                test: /\.svelte$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'svelte-loader',
-                    options: {
-                        emitCss: true,
-                        hotReload: true
-                    }
-                }
-            },
+            // {
+            //     test: /\.svelte$/,
+            //     exclude: /node_modules/,
+            //     use: {
+            //         loader: 'svelte-loader',
+            //         options: {
+            //             emitCss: true,
+            //             hotReload: true
+            //         }
+            //     }
+            // },
             {
                 test: /\.css$/,
                 use: [

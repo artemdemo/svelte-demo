@@ -1,5 +1,9 @@
+console.log('1111!');
+
 export const foo = 'foo!';
 
-export default {
+const testO = {
     msg: 'this is msg',
 };
+
+export default testO;
