@@ -5,7 +5,8 @@ const prod = mode === 'production';
 
 module.exports = {
     entry: {
-        index: './src/lib/index.js',
+        index: './src/index.js',
+        test: './src/test.js',
     },
     resolve: {
         extensions: ['.mjs', '.js', '.svelte']
