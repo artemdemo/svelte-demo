@@ -12,9 +12,11 @@ const AppView = (props) => {
             <p>&nbsp;</p>
             <SvelteComponent
                 component={Button.default}
-                content='Open third page programmatically'
-                onClick={() => {
-                    history.push('/third');
+                props={{
+                    content: 'Open third page programmatically',
+                    onClick: () => {
+                        history.push('/third');
+                    },
                 }}
             />
 

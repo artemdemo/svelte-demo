@@ -22,11 +22,11 @@ class SvelteComponent extends React.Component {
     }
 
     componentDidMount() {
-        const { component: Constructor, ...data } = this.props;
+        const { component: Constructor, props } = this.props;
 
         this.instance = new Constructor({
             target: this.container.current,
-            data,
+            props
         });
     }
 

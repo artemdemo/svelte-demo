@@ -5,7 +5,7 @@ const prod = mode === 'production';
 
 module.exports = {
     entry: {
-        Button: './source/components/Button.js',
+        Button: './source/components/Button.svelte',
         test: './source/components/test.js',
     },
     resolve: {
