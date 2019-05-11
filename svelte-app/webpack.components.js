@@ -6,7 +6,6 @@ const prod = mode === 'production';
 module.exports = {
     entry: {
         Button: './source/components/Button.svelte',
-        test: './source/components/test.js',
     },
     resolve: {
         extensions: ['.mjs', '.js', '.svelte']
@@ -16,7 +15,6 @@ module.exports = {
         filename: '[name].js',
         library: '',
         libraryTarget: 'commonjs',
-        // umdNamedDefine: true,
     },
     module: {
         rules: [

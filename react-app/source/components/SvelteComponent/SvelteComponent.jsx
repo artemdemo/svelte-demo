@@ -13,8 +13,8 @@ import React from 'react';
  */
 
 class SvelteComponent extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.container = React.createRef();
         this.instance = null;
@@ -31,11 +31,11 @@ class SvelteComponent extends React.Component {
     }
 
     componentDidUpdate() {
-        this.instance.set(this.props);
+        this.instance.set && this.instance.set(this.props);
     }
 
     componentWillUnmount() {
-        this.instance.destroy();
+        this.instance.destroy && this.instance.destroy();
     }
 
     render() {
