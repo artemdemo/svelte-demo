@@ -4,9 +4,7 @@
   "description": "Bootstrapping a UI component library",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/parcel src/docs/index.html",
-    "build": "./node_modules/.bin/webpack --mode=production",
-    "build:docs": "./node_modules/.bin/parcel build src/docs/index.js -d ./dist/docs && cp src/docs/index.html dist/docs/index.html"
+    "build": "./node_modules/.bin/webpack --mode=production"
   },
   "author": "Pedro Madruga",
   "license": "MIT",
@@ -31,7 +29,6 @@
     "@babel/runtime": "^7.4.4",
     "babel-core": "^7.0.0-bridge.0",
     "babel-loader": "^8.0.5",
-    "parcel-bundler": "^1.6.2",
     "webpack": "4.9.2",
     "webpack-cli": "^3.3.2",
     "webpack-node-externals": "^1.7.2"
