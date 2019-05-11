@@ -1,7 +1,6 @@
 import React from 'react';
 // import * as Button from '@svelte-app/Button';
-// import Test from '@svelte-app/Test';
-import * as test from '@test-ui/test';
+import * as test from '@svelte-app/test';
 import { Button as Btn } from '@test-ui/index';
 import SvelteComponent from '../../components/SvelteComponent/SvelteComponent';
 import history from '../../history';

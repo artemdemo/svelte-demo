@@ -6,7 +6,7 @@ const prod = mode === 'production';
 module.exports = {
     entry: {
         // Button: './source/components/Button.js',
-        Test: './source/components/Test.js',
+        test: './source/components/test.js',
     },
     resolve: {
         extensions: ['.mjs', '.js', '.svelte']
@@ -14,8 +14,8 @@ module.exports = {
     output: {
         path: `${process.cwd()}/build/components`,
         filename: '[name].js',
-        chunkFilename: '[name].[id].js',
-        libraryTarget: 'umd',
+        library: '',
+        libraryTarget: 'commonjs',
         // umdNamedDefine: true,
     },
     module: {
