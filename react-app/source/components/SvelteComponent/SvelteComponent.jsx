@@ -21,9 +21,14 @@ class SvelteComponent extends React.Component {
         super(props);
         const { tagName } = props;
 
-        this.container = React.createRef();
         this.instance = null;
-        this.div = React.createElement(tagName, { ref: this.container });
+        this.container = React.createRef();
+        this.div = React.createElement(
+            tagName,
+            {
+                ref: this.container,
+            },
+        );
     }
 
     componentDidMount() {

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '@svelte-app/Button';
 import Icon from '../../components/Icon/Icon';
 import SvelteComponent from '../../components/SvelteComponent/SvelteComponent';
 
 const MainView = () => {
+    const [count, setCount] = useState(0);
     return (
         <React.Fragment>
             <p>
@@ -15,9 +16,9 @@ const MainView = () => {
                 component={Button.default}
                 tagName='span'
                 props={{
-                    content: 'Test Button',
+                    content: `Test Button, clicked ${count} times`,
                     onClick: () => {
-                        console.log('This is a test button');
+                        setCount(count + 1);
                     },
                 }}
             />
