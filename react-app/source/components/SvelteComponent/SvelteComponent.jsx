@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * React wrapper for Svelte components.
@@ -15,10 +16,11 @@ import React from 'react';
 class SvelteComponent extends React.Component {
     constructor(props) {
         super(props);
+        const { tagName } = props;
 
         this.container = React.createRef();
         this.instance = null;
-        this.div = React.createElement('div', { ref: this.container });
+        this.div = React.createElement(tagName, { ref: this.container });
     }
 
     componentDidMount() {
@@ -42,5 +44,18 @@ class SvelteComponent extends React.Component {
         return this.div;
     }
 }
+
+SvelteComponent.propTypes = {
+    component: PropTypes.func.isRequired,
+    props: PropTypes.shape({}),
+    tagName: PropTypes.oneOf([
+        'div', 'span', 'p',
+    ]),
+};
+
+SvelteComponent.defaultProps = {
+    props: {},
+    tagName: 'div',
+};
 
 export default SvelteComponent;
