@@ -1,11 +1,18 @@
-const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 
+const mode = process.env.NODE_ENV || 'development';
+const prod = mode === 'production';
+
 module.exports = {
-    entry: path.resolve(__dirname, './src/lib/index.js'),
+    entry: {
+        index: './src/lib/index.js',
+    },
+    resolve: {
+        extensions: ['.mjs', '.js', '.svelte']
+    },
     output: {
-        path: path.resolve(__dirname, './dist/lib'),
-        filename: 'index.js',
+        path: `${process.cwd()}/dist/lib`,
+        filename: '[name].js',
         library: '',
         libraryTarget: 'commonjs'
     },
@@ -13,14 +20,19 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(mjs|js)?$/,
                 exclude: /(node_modules|bower_components)/,
-                loader: 'babel-loader'
+                use: {
+                    loader: 'babel-loader',
+                },
             },
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
             }
         ]
-    }
+    },
+    mode,
+    plugins: [],
+    devtool: prod ? false: 'source-map'
 };
