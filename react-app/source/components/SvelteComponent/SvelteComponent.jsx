@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
  *
  * **Limitations**
  * This is a fairly basic integration, some things don't currently work and possibly never will:
- * - the value of `component` is fixed; changing it after the initial render will have no effect
+ * - all values (except `props`) are fixed; changing them after the initial render will have no effect
  * - you can't use `<slot>`
  *
  * @link https://github.com/Rich-Harris/react-svelte
