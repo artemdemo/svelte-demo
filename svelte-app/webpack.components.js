@@ -5,7 +5,7 @@ const prod = mode === 'production';
 
 module.exports = {
     entry: {
-        // Button: './source/components/Button.js',
+        Button: './source/components/Button.js',
         test: './source/components/test.js',
     },
     resolve: {
@@ -27,18 +27,17 @@ module.exports = {
                     loader: 'babel-loader',
                 },
             },
-
-            // {
-            //     test: /\.svelte$/,
-            //     exclude: /node_modules/,
-            //     use: {
-            //         loader: 'svelte-loader',
-            //         options: {
-            //             emitCss: true,
-            //             hotReload: true
-            //         }
-            //     }
-            // },
+            {
+                test: /\.svelte$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'svelte-loader',
+                    options: {
+                        emitCss: true,
+                        hotReload: true
+                    }
+                }
+            },
             {
                 test: /\.css$/,
                 use: [
