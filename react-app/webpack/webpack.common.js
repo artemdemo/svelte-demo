@@ -61,6 +61,7 @@ module.exports = (options) => {
             extensions: ['.js', '.jsx'],
             alias: {
                 '@svelte-app': path.resolve(__dirname, '../../svelte-app/build/components'),
+                '@test-ui': path.resolve(__dirname, '../../testUI/dist/lib'),
             },
         },
         module: {
