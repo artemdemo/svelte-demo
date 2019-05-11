@@ -11,6 +11,9 @@ import PropTypes from 'prop-types';
  * - you can't use `<slot>`
  *
  * @link https://github.com/Rich-Harris/react-svelte
+ *
+ * More about Client-Side API in official doc:
+ * https://svelte.dev/docs#Client-side_component_API
  */
 
 class SvelteComponent extends React.Component {
@@ -24,20 +27,30 @@ class SvelteComponent extends React.Component {
     }
 
     componentDidMount() {
-        const { component: Constructor, props } = this.props;
+        const {
+            component: Constructor,
+            anchor,
+            intro,
+            props,
+        } = this.props;
 
         this.instance = new Constructor({
             target: this.container.current,
+            anchor,
+            intro,
             props
         });
     }
 
     componentDidUpdate() {
-        this.instance.set && this.instance.set(this.props);
+        if (this.instance) {
+            const { props } = this.props;
+            this.instance.$set(props);
+        }
     }
 
     componentWillUnmount() {
-        this.instance.destroy && this.instance.destroy();
+        this.instance && this.instance.$destroy();
     }
 
     render() {
@@ -48,6 +61,9 @@ class SvelteComponent extends React.Component {
 SvelteComponent.propTypes = {
     component: PropTypes.func.isRequired,
     props: PropTypes.shape({}),
+    anchor: PropTypes.any,
+    hydrate: PropTypes.bool,
+    intro: PropTypes.bool,
     tagName: PropTypes.oneOf([
         'div', 'span', 'p',
     ]),
@@ -55,6 +71,9 @@ SvelteComponent.propTypes = {
 
 SvelteComponent.defaultProps = {
     props: {},
+    anchor: null,
+    hydrate: false,
+    intro: false,
     tagName: 'div',
 };
 
