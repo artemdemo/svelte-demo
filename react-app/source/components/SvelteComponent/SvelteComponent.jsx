@@ -43,7 +43,7 @@ class SvelteComponent extends React.Component {
             target: this.container.current,
             anchor,
             intro,
-            props
+            props,
         });
     }
 
